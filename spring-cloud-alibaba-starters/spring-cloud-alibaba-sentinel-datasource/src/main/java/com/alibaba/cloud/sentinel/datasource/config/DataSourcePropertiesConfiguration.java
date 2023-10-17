@@ -35,6 +35,7 @@ import org.springframework.util.ObjectUtils;
  * @see FileDataSourceProperties
  * @see RedisDataSourceProperties
  * @see ConsulDataSourceProperties
+ * @see EtcdDataSourceProperties
  */
 public class DataSourcePropertiesConfiguration {
 
@@ -49,6 +50,8 @@ public class DataSourcePropertiesConfiguration {
 	private RedisDataSourceProperties redis;
 
 	private ConsulDataSourceProperties consul;
+
+	private EtcdDataSourceProperties etcd;
 
 	public DataSourcePropertiesConfiguration() {
 	}
@@ -65,6 +68,13 @@ public class DataSourcePropertiesConfiguration {
 		this.consul = consul;
 	}
 
+	public EtcdDataSourceProperties getEtcd() {
+		return etcd;
+	}
+
+	public void setEtcd(EtcdDataSourceProperties etcd) {
+		this.etcd = etcd;
+	}
 	public DataSourcePropertiesConfiguration(FileDataSourceProperties file) {
 		this.file = file;
 	}
