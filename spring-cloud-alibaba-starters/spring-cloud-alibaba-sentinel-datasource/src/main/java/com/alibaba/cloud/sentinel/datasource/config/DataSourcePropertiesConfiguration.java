@@ -50,6 +50,8 @@ public class DataSourcePropertiesConfiguration {
 
 	private ConsulDataSourceProperties consul;
 
+	private EtcdDataSourceProperties etcd;
+
 	public DataSourcePropertiesConfiguration() {
 	}
 
@@ -63,6 +65,14 @@ public class DataSourcePropertiesConfiguration {
 
 	public void setConsul(ConsulDataSourceProperties consul) {
 		this.consul = consul;
+	}
+
+	public EtcdDataSourceProperties getEtcd() {
+		return etcd;
+	}
+
+	public void setEtcd(EtcdDataSourceProperties etcd) {
+		this.etcd = etcd;
 	}
 
 	public DataSourcePropertiesConfiguration(FileDataSourceProperties file) {
