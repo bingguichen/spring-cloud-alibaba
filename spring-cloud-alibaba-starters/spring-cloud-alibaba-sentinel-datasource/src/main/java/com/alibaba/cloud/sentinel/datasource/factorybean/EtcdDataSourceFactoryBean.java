@@ -20,11 +20,8 @@ package com.alibaba.cloud.sentinel.datasource.factorybean;
 import com.alibaba.csp.sentinel.datasource.Converter;
 import com.alibaba.csp.sentinel.datasource.etcd.EtcdConnectionConfig;
 import com.alibaba.csp.sentinel.datasource.etcd.EtcdDataSource;
-import com.alibaba.csp.sentinel.log.RecordLog;
-import com.google.gson.JsonObject;
-import io.netty.handler.codec.json.JsonObjectDecoder;
+
 import org.springframework.beans.factory.FactoryBean;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.util.StringUtils;
 
 /**
@@ -55,7 +52,6 @@ public class EtcdDataSourceFactoryBean implements FactoryBean<EtcdDataSource> {
 		if (isAuthEnable()) {
 			builder.withUser(user).withPassword(password).withAuthority(authority).withCharset(charset);
 		}
-		RecordLog.info("[EtcdDataSource] init builder");
 		return new EtcdDataSource(builder.build(), ruleKey, converter);
 	}
 
